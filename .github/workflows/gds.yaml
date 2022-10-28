@@ -166,9 +166,10 @@ jobs:
 
     - name: debug
       run: |
+        pwd
+        find .
         ls info.yaml
         ls src/*
-        find .
 
     - name: upload artifact
       uses: actions/upload-artifact@v3
@@ -176,7 +177,6 @@ jobs:
           # path depends on the tag and the module name
           name: GDS
           path: |
-            info.yaml
             src/*
             runs/wokwi/results/final/*
             runs/wokwi/reports/metrics.csv
